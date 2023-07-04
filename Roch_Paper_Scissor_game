@@ -1,0 +1,30 @@
+import java.util.*;
+public class Main{
+    public static void main(String args[])
+	{
+	    //Generating random no.
+		Random rand = new Random();
+		int rand_int = rand.nextInt(3);
+		System.out.println("Random Integers: "+rand_int);
+		
+		//Taking input from user
+		System.out.println("Rock: 0");
+		System.out.println("Paper: 1");
+		System.out.println("Scissor: 2");
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Please enter the no.: ");
+		int user_int=sc.nextInt();
+		
+		//Compare Random and user no.
+		if(rand_int==user_int){
+		    System.out.println("Match draw!!");
+		}
+		else if(rand_int>user_int){
+		    System.out.println("You lost the match!!");
+		}
+		else{
+		    System.out.println("You won!!");
+		}
+		System.out.print("Match ends");
+	}
+}
