@@ -1,0 +1,28 @@
+//----------------------SAMPLE CODE FOR PRINTING PATTERNS----------------------------------
+public class Main
+{
+//-----------------------------PRINTING SIMPLE STAR PATTERN-------------------------------------
+    public static void pattern(int n){
+        for(int m=0; m<n;m++){
+           for(int p=0; p<=m;p++){
+              System.out.print("*");
+        }
+        
+        System.out.println();
+        }
+    }
+
+//-------------------------------PRINTING REVERSE STAR PATTERN----------------------------------
+public static void revpattern(int e){
+        for(int f=0; f<e;f++){
+           for(int g=0; g<e-f;g++){
+              System.out.print("*");
+        }
+        System.out.println();
+        }
+    }
+    
+	public static void main(String[] args) {
+	    pattern(5);
+      revpattern(5);
+}
