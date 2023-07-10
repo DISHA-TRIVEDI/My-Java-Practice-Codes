@@ -1,0 +1,66 @@
+import java.util.*;
+
+class Newgame{
+    public int rand_int;//Var for random integer
+    public int number;//For input from user
+    public boolean iscorrect;// For continue the loop until the correct number enters
+    public int guess=0;//For counting number of attempts to get correct number
+    
+    //Constructor used for generating random number
+    Newgame(){
+       Random rand= new Random();
+       this.rand_int= rand.nextInt(100);
+    }
+    
+    //Method for input of number from user
+    void Userinput(){
+        Scanner sc= new Scanner(System.in);
+        this.number= sc.nextInt();
+       
+    }
+    
+    //Method to compare the generated number and user input
+    void Checknumber(){
+        //Increment the number attempts need to guess the correct number
+        guess++;
+        
+        if(number==rand_int){
+           System.out.println("Great, you have entered the coreect number!!");
+           iscorrect= true;
+           System.out.println("Congratulations, You have guessed the number in "+guess+" attempts");
+
+           if(guess<=6){
+               System.out.println("You have done well....");
+                System.out.println(" ");
+           }
+           else{
+                System.out.println("Oops, Better Luck Next Time......");
+           }
+           
+        }
+        else if(number>rand_int){
+            System.out.println("Entered number is large, please enter the small number!! ");
+        }
+        else if(number<rand_int){
+            System.out.println("Entered number is small, please enter the large number!! ");
+        }
+        else{
+            System.out.println("Please enter the number btw 0-100");
+        }
+        System.out.println(" ");
+        
+    }
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Newgame game= new Newgame();
+	    //Loop continues to run until the user input = generated number
+	    while(!game.iscorrect){
+	    System.out.print("Enter the Number: ");
+	    game.Userinput();
+		  game.Checknumber();
+	    }
+	}
+}
