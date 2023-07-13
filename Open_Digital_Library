@@ -1,0 +1,98 @@
+//--------------------------CODE FOR OPEN DIGITAL LIBRARY-------------------------------------------
+
+import java.util.*;
+
+class library {
+  String books[] = { "Emma", "Atonement", "Room", "Holes", "Speak", "Annabel", "Ash", "Away", "Autumn", "Beloved",
+      "Bonsai", "Clockers", "Dancer", "Hunger", "Freedom", "Nirmala", "Shame", "Dracula", "Untouchable" };
+  int n = books.length;
+
+  // constructor for printing array of books
+  library() {
+    System.out.println(" Books available in library: ");
+    System.out.print(Arrays.toString(books));
+    System.out.println("\n");
+  }
+
+  // Method for book issue
+  public void Bookissue() {
+
+    Scanner sc = new Scanner(System.in);
+    System.out.print(" Which book do you want to issue: ");
+    String issue = sc.next();
+    boolean found = false;
+
+    for (int i = 0; i < n; i++) {
+      if (issue.equals(books[i])) {
+        System.out.println(" You have issued The " + issue + " from Digital library");
+        found = true;
+        break;
+      }
+    }
+
+    if (!found) {
+      System.out.println("Please enter correct bookname from available books ");
+    }
+    System.out.println("");
+  }
+
+  // Return book to the library
+  public void Bookreturn() {
+
+    Scanner sc = new Scanner(System.in);
+    System.out.print(" Which book do you want to return: ");
+    String bookreturn = sc.next();
+    boolean found = false;
+
+    for (int i = 0; i < n; i++) {
+      if (bookreturn.equals(books[i])) {
+        System.out.println(" You have returned The " + bookreturn + " to Digital library");
+        found = true;
+        break;
+      }
+    }
+
+    if (!found) {
+      System.out.println("Please enter correct bookname or you have not issued this book from Digital library ");
+    }
+    System.out.println("");
+  }
+
+  // Add book in the array
+  public void Bookadd() {
+    Scanner sc = new Scanner(System.in);
+    System.out.print(" Enter the name of book you want to add in the library: ");
+    String add = sc.next();
+    String addbooks[] = new String[n + 1];
+    for (int i = 0; i < n; i++) {
+      addbooks[i] = books[i];
+
+    }
+    addbooks[n] = add;
+    System.out.print(Arrays.toString(addbooks));
+  }
+}
+
+public class Main {
+  public static void main(String[] args) {
+    System.out.println("       Welcome to the DIGITAL LIBRARY :)\n");
+    library lib = new library();
+
+    // For taking user input to know the entry status
+    Scanner sc = new Scanner(System.in);
+    System.out.print(" You want to Enter in library or Exit from library: ");
+    String a = sc.next();
+    if (a.equals("Enter")) {
+      System.out.println(" Welcome in the Digital library!!");
+      System.out.println(" ");
+      lib.Bookissue();
+      lib.Bookreturn();
+      lib.Bookadd();
+    } else if (a.equals("Exit")) {
+      System.out.print(" See you soon!!");
+    } else {
+      System.out.print(" Error");
+    }
+
+  }
+}
