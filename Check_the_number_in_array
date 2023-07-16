@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    int arr[]={23, 34, 45};
+	    Scanner sc = new Scanner(System.in);
+	    boolean value= true;
+	    while(value){
+	    System.out.print("Enter the value: ");
+	    int a=sc.nextInt();
+	    try {
+	        System.out.println("Searching the value ");
+	        try{
+	            System.out.println("The value is "+arr[a]);
+	            value= false;
+	        }
+	        catch(ArrayIndexOutOfBoundsException x) {
+	            System.out.println("An exception occur...");
+	        }
+	       
+	    }
+	        catch(Exception e) {
+	            System.out.println("Error occur");
+	            
+	        }
+	    }     
+		System.out.println("Thankyou!");
+	}
+}
