@@ -26,3 +26,14 @@ public static void revpattern(int e){
 	    pattern(5);
       revpattern(5);
 }
+
+//-------------------------------PRINTING FLOYD'S TRIANGLE PATTERN----------------------------------
+int number=1;
+	    for( int i=0;i<n;i++){
+	        System.out.println(" ");
+	   
+	    for(int j=0;j<=i;j++){
+		System.out.print(number+" ");
+		 number++;
+	    }
+	    }
